@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block tile %}
+Color Blind Recognise
+{% endblock %}
+
+{% block header %}
+<header>
+     <nav>
+        <ul class="clearfix">
+            <li style="padding: 0 0 0 20px;"><button><a href="{{ url_for('auth.register') }}" style="color: #000000">Join us</a></button></li>
+            {% if current_user.is_authenticated %}
+            <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+            {% else %}
+            <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+            {% endif %}
+            <li>|</li>
+            <li><a href="{{ url_for('main.forum') }}">Forum</a></li>
+            <li>|</li>
+            <li><a href="{{ url_for('main.converter') }}">Converter</a></li>
+            <li>|</li>
+            <li><a href="{{ url_for('main.index') }}" class="active">Home</a></li>
+
+        </ul>
+    </nav>
+    <div id="main_function" class="clearfix">
+        <div id="main_converter" class="slogan" >
+            <p>Color <br/>Blindness <br/>Recognition<br/><span style="font-size: 30px">It's not all black and white.</span>
+            </p>
+            <button><a href="#introduction">How it works</a></button>
+        </div>
+        <div id="main_forum" class="slogan">
+            <p>Join in <br/>Disgussion, <br/>see what we can do more.</p>
+            <button><a href="{{ url_for('main.forum') }}">Join in</a></button>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<main id="introduction">
+    <div style="flex-direction: column;
+    justify-content: center;">
+        <h2> What is color blindness?</h2>
+        <p>Color blindness is the inability or decreased ability to see color,or perceive color differences, under normal lighting conditions. Color blindness affects a significant percentage of the population.There is no actual blindness but there is a deficiency of color vision. The most usual cause is a fault in the development of one or more sets of retinal cones that perceive color in light and transmit that information to the optic nerve.</p>
+    </div>
+    <div>
+        <div class="images"><img src="{{ url_for('static', filename='images/ux.png') }}"></div>
+        <div class="infoContent" style="padding-left: 250px;">
+        <h2>Color Matters in GUI</h2>
+        <h3>&#9745;&ensp; To speed visual search</h3>
+        <h3>&#9745;&ensp; To improve object recognition</h3>
+        <h3>&#9745;&ensp; To improve usability</h3>
+        
+        </div>
+    </div>
+    <div>
+        <div class="infoContent">
+        <h2>Color blindness matters for designer</h2>
+        <P>Over 8% of your male clients are likely to be color blind,color blindness typically refers to a reduced ability to distinguish between shades of certain colors. Graphic user interfaces are a major concern because it is crucial that they are legible and easy to navigate for all users.It is vital for designers to see what their color blind customers will see. </P>
+        </div>
+        <div class="images"><img src="{{ url_for('static', filename='images/eye.jpg') }}"></div>
+        
+    </div>
+    <div id="blindType">
+        <div >
+            <h2>Protanomaly</h2>
+            <p>a reduced sensitivity to red light</p>
+        </div>
+        <div>
+            <h2>Peuteranomaly</h2>
+            <p>A reduced sensitivity to green light and is the most common form of colour blindness</p>
+        </div>
+        <div>
+            <h2>Tritanomaly</h2>
+            <p>a reduced sensitivity to blue light and is extremely rare.</p>
+        </div>
+
+    </div>
+    <div id="tryConverter">
+        <h2>Choose an image through the upload functionality or just drag and drop your image in the center of our Color BLIndness Converter.</h2>
+        <a href="{{ url_for('main.converter') }}"><span>Try Converter</span></a>
+    </div>
+</main>
+{% endblock %} 

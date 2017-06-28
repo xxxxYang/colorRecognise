@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+ {% block stylesheet %}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+ {% endblock %}
+ {% block header %}
+<nav style="background-color: black;">
+		<ul class="clearfix">
+			<li style="padding: 0 0 0 20px;"><button><a href="{{ url_for('auth.register') }}" style="color: #000000">Join us</a></button></li>
+			{% if current_user.is_authenticated %}
+			<li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+			{% else %}
+			<li><a href="{{ url_for('auth.login') }}">Login</a></li>
+			{% endif %}
+            <li>|</li>
+            <li><a href="{{ url_for('main.forum') }}" class="active">Forum</a></li>
+            <li>|</li>
+            <li><a href="{{ url_for('main.converter') }}">Converter</a></li>
+            <li>|</li>
+            <li><a href="{{ url_for('main.index') }}">Home</a></li>
+
+		</ul>
+	</nav>
+	{% endblock %}
+	{% block content %}
+
+	<content id ="blog">
+	<div id="blogBanner">
+	<div id="blogInfo">
+ 		<h1>{{ post.title }}</h1>
+ 		<p><span style="padding-right:2em;">{{ moment(post.timestamp).format('YYYY-MM-DD') }}</p>
+ 		</div>
+ 		</div>
+	<a href="{{ url_for('main.profile', id=post.author.id) }}" id="blogger">
+		
+		<img src="{{ url_for('static', filename='images/userPhoto.png') }}" class="userPhoto">
+		<div class="userInfo">
+			<p>{{ post.author.username}}</p>
+			
+		</div>
+		</a>
+
+
+		
+
+	
+	<div id="blogContent">
+	
+		<p>{{ post.content }}</p>
+	</div>
+
+	
+	<ul id="comments">
+		<h3>Comments</h3>
+		{% for c in post.comments %}
+		<li class="comment clearfix" id="comment1">
+			<div style="float: left;">
+				<img src="{{ url_for('static', filename='images/userPhoto.png') }}">
+			</div>
+			<div>
+				<p><a href="{{ url_for('main.profile', id=c.author.id) }}"><strong>{{c.author.username}}</strong></a></p>
+				<p style="margin: 0;">{{ c.body }} </p>
+				<p style="font-size: 0.8em;color: grey;">{{ moment(c.timestamp).format('LLL') }}{# <a href="">reply</a> #}</p>
+			</div>
+		</li>
+		{% endfor %}
+		<div>
+			{% if current_user.is_authenticated %}
+		<form action="{{ url_for('main.post', id=post.id) }}" name="comment" method="post" accept-charset="utf-8">
+			<input type="text" name="comment" id="writeComment"  placeholder="Comment here...">
+			<input type="submit" value="Submit" id="submitComment">
+		</form>
+		{% endif %}
+	</div>
+	</ul>
+
+	
+	</content>
+	{% endblock %}
+	{% block footer %}
+	<footer>
+		<div class="footer">
+			<div class="wrap">
+			<div class="links">
+			<h5>Links</h5>
+			<ul>
+				<li><a href="{{ url_for('main.index') }}">Home</a></li>
+				<li><a href="{{ url_for('main.converter') }}">Converter</a></li>
+				<li><a href="{{ url_for('main.forum') }}">Forum</a></li>
+				<li><a href="">Login</a></li>
+			</ul>
+			</div>
+			<div class="address">
+			<h5>Contacts</h5>
+			<p style="font-size: 80%">frerg tht yh6re gt<br>
+			fjifjenvir feferg, frjfegj<br>
+			fjirejvrt gt<br>
+			Tel: +358 31234 5678<br>
+			<a href="mailto:xy452658165@gmail.com">yang.xiao.finland@gmail.com</a>
+			</p>
+			
+			</div>
+			</div>
+			<p style="text-align: center; padding: 10px; font-size:12px ">© Copyright 2016 Yang Xiao</p>
+		</div>
+	</footer>
+	{% endblock %}

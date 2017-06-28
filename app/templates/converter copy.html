@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Converter</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+</head>
+<body>
+
+	<nav style="background-color: black;">
+		<ul class="clearfix">
+			<li style="padding: 0 0 0 20px;"><button><a href="" style="color: #000000">Join us</a></button></li>
+			<li><a href="">Login</a></li>
+			<li>|</li>
+			<li><a href="">Forum</a></li>
+			<li>|</li>
+			<li><a href="">Converter</a></li>
+			<li>|</li>
+			<li><a href="{{ url_for('main.index') }}">Home</a></li>
+
+		</ul>
+	</nav>
+
+	<content>
+		<div id="converter">
+		<h2>File Upload & Image Preview</h2>
+		<form action="/converter" method=post enctype=multipart/form-data>
+      <p><input type=file name=file>
+         <input type=submit value=Upload>
+    </form>
+
+		</div>
+		{% if show_result %}
+		<div id="result" >
+			<div  class="clearfix" id="resultList">
+			<div id="duteranope"> 
+			<a href="{{ url_for('static', filename='user_upload'+'/deuteronopia_'+result_file_name) }}">
+			<img src="{{ url_for('static', filename='user_upload'+'/deuteronopia_'+result_file_name) }}">
+			</a>
+			<div class="info"> Duteranope</div>
+			</div>
+			<div id="protanope">
+				<a href="{{ url_for('static', filename='user_upload'+'/protonapia_'+result_file_name) }}">
+				<img src="{{ url_for('static', filename='user_upload'+'/protonapia_'+result_file_name) }}">
+				</a>
+				<div class="info"> Protanope</div>
+			</div>
+			<div id="tritanope">
+				<a href="{{ url_for('static', filename='user_upload'+'/tritanopia_'+result_file_name) }}">
+				<img src="{{ url_for('static', filename='user_upload'+'/tritanopia_'+result_file_name) }}">
+				</a>
+				<div class="info">Tritanope </div>
+			</div>
+			</div>
+			<div id="original">
+				<a href="{{ url_for('static', filename='user_upload'+'/'+result_file_name) }}">
+				<img src="{{ url_for('static', filename='user_upload'+'/'+result_file_name) }}">
+				</a>
+				<div class="info">Original</div>
+			</div>
+		</div>
+		{% endif %}
+	</content>
+	<footer>
+		
+	</footer>
+<!-- <script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+ --></body>
+</html>

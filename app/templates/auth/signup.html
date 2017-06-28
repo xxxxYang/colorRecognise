@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+ {% block stylesheet %}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<script type="text/javascript" src="{{ url_for('static', filename='js/registration.js') }}"></script>
+ {% endblock %}
+ {% block header %}
+<nav style="background-color: black;">
+		<ul class="clearfix">
+			<li style="padding: 0 0 0 20px;"><button><a href="{{ url_for('auth.register') }}" style="color: #000000">Join us</a></button></li>
+			{% if current_user.is_authenticated %}
+			<li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+			{% else %}
+			<li><a href="{{ url_for('auth.login') }}">Login</a></li>
+			{% endif %}
+			<li>|</li>
+			<li><a href="{{ url_for('main.forum') }}" >Forum</a></li>
+			<li>|</li>
+			<li><a href="{{ url_for('main.converter') }}">Converter</a></li>
+			<li>|</li>
+			<li><a href="{{ url_for('main.index') }}">Home</a></li>
+
+		</ul>
+	</nav>
+	{% endblock %}
+	{% block content %}
+
+	<content id="signPage">
+	<div id="signForm">
+		<form action="{{ url_for('auth.register') }}" name="registration" method="post" accept-charset="utf-8">
+		<div >
+			<input type="text" name="email" placeholder="Username/email" class="fillin" required="true" id="registerEmail">
+		</div>
+		<div>
+			<input type="password" name="password" placeholder="Password" class="fillin" required="true" id="registerPass">
+		</div>
+		<div>
+			<input type="password" name="passwordConfirm" placeholder="Re-enter password" class="fillin" required="true" id="registerPass">
+		</div>
+		<div>
+			<label><input type="checkbox" name="is_remember" value="true">&ensp;Remember me</label>
+		</div>
+		
+		<div>
+			<input type="submit" name="commit" value="Sign Up" class="fillin" id="signupButton">
+		</div>
+		<div>
+			<p>If you are already registered <a href="{{ url_for('auth.login') }}">login here</a>.</p>
+		</div>
+		</form>
+
+		<footer class="signFooter">© Copyright 2016 Color Recognition Team</footer>
+	</div>
+	</content>
+		{% endblock %}
+
+	{% block footer %}
+	{% endblock %}

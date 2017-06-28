@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Vision{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    {% block stylesheet %}
+
+    {% endblock %}
+
+</head>
+
+<body>
+
+{% block header %}
+
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}  
+
+{% block footer %}
+<footer>
+		<div class="footer">
+			<div class="wrap">
+			<div class="links">
+			<h5>Links</h5>
+			<ul>
+				<li><a href="{{ url_for('main.index') }}">Home</a></li>
+				<li><a href="{{ url_for('main.converter') }}">Converter</a></li>
+				<li><a href="{{ url_for('main.forum') }}">Forum</a></li>
+				<li><a href="{{ url_for('main.index') }}">Login</a></li>
+			</ul>
+			</div>
+			<div class="address">
+			<h5>Contacts</h5>
+			<p style="font-size: 80%">frerg tht yh6re gt<br>
+			fjifjenvir feferg, frjfegj<br>
+			fjirejvrt gt<br>
+			Tel: +358 31234 5678<br>
+			<a href="mailto:xy452658165@gmail.com">colorBlind@gmail.com</a>
+			</p>
+			
+			</div>
+			</div>
+			<p style="text-align: center; padding: 10px; font-size:12px ">© Copyright 2016 Color Recognition Team</p>
+		</div>
+</footer>
+
+{% endblock %}
+
+{% block script %}
+
+{{ moment.include_jquery() }}
+{{ moment.include_moment() }}
+
+{% endblock %}
+
+</body>
+
+</html>

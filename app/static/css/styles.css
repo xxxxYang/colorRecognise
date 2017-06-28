@@ -1,0 +1,744 @@
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+
+
+html, body{
+	height: 100%;
+}
+p{
+	font-family: sans-serif;
+}
+a{
+	text-decoration: none;
+}
+body {
+	padding: 1px;
+}
+header {
+	height: 900px ;
+
+	background-image: url(../images/background.png) ;
+	background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 100%;
+    
+    
+}
+.active{
+ text-decoration: underline;
+}
+nav ul {
+	margin: 0;
+	list-style: none;
+	padding: 0;
+	text-align: right;
+	height: 48px;
+	width: 100%;
+	
+
+	
+}
+nav button{
+	color:black;
+	background-color: #fff;
+	border-style: solid ;
+	border-color: #fff;
+	border-radius: 3px;
+	position: relative;
+	top: 8px;
+	right: 8px;
+	height: 30px;
+	width: 70px;
+}
+nav ul li{
+	color: #fff;
+	margin: 0;
+	float: right;
+	padding: 15px 15px;
+
+}
+
+nav ul li a {
+	color: #fff;
+	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+	font-size: 12px;
+}
+#main_function{
+	
+
+}
+#main_function button {
+color: #fff;
+background-color: transparent;
+border: solid 1px;
+border-color: #9B9B9B;
+border-radius: 5px;
+width: 200px;
+height: 50px;
+margin: 50px auto;
+position: relative;
+left: 30%;
+
+
+}
+#main_function button:hover a{
+	padding-right: 25px;
+
+}
+
+#main_function button a::after{
+	content: " >";
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+#main_function button:hover a::after{
+	opacity: 1;
+	right: 0;
+}
+
+#main_function a{
+	cursor: pointer;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 15px;
+	color: #9B9B9B;
+	padding: auto;
+	letter-spacing: 0.5px;
+	transition: 0.5s;
+	position: relative;
+    right: -10px;
+}
+
+
+#main_forum{
+	width: 48%;
+	float: right;
+}
+#main_forum p{
+	color: #fff;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 62px;
+	margin: 150px 0 70px 40px;
+}
+#main_converter{
+	width: 48%;
+	float: left;
+	
+}
+#main_converter p{
+	color: black;
+	font-family: sans-serif;
+	font-size: 62px;
+	text-shadow: #000000 6px;
+	text-shadow: 1px 1px 2px rgba(128, 128, 128, 0.76);
+	margin: 150px 0 80px 40px;
+
+}
+#introduction{
+  width: 900px;
+  margin:0 auto 80px ;
+}
+
+#introduction >div{
+  height: 300px;
+  display: flex;
+  display: -webkit-flex;
+  border-bottom-style: solid;
+  border-color: grey;
+  border-width: 1px;
+
+}
+#introduction >div .images{
+  width: 300px;
+}
+#introduction img{
+  width: 200px;
+  height: auto;
+  padding: 50px;
+}
+#introduction >div .infoContent{
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+#blindType {
+   -webkit-justify-content: space-between;
+    justify-content: space-between;
+
+}
+#blindType >div{
+ width: 250px;
+ text-align: center;
+padding-top: 30px;
+margin-top: 50px;
+
+}
+#tryConverter{
+  
+  text-align:center; 
+   flex-direction: column;
+    justify-content: center;
+    background-color: black;
+    color: #fff;
+    text-decoration: none;
+    padding: 20px 40px;
+
+
+}
+#tryConverter a{
+  text-decoration: none;
+  color: #fff;
+  margin: 20px auto;
+}
+#tryConverter span{
+  padding: 5px 10px;
+  border:1px solid #fff;
+}
+
+#tryConverter span:hover{
+  
+  color: black;
+  background-color: #fff;
+  cursor: pointer;
+}
+/*...........................................................................*/
+#converter{
+	background-color: black;
+	padding: 80px 0 0 0;
+    border-top: solid grey 1px;
+    height: 400px;
+}
+#converter h2{
+	color: #fff; 
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	margin: 20px auto;
+	text-align: center;
+
+}
+.uploader {
+  display: block;
+  clear: both;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+}
+.uploader label {
+  float: left;
+  clear: both;
+  width: 100%;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  background: #fff;
+  border-radius: 7px;
+  border: 2px solid #fff;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.uploader label:hover {
+  border-color: grey;
+}
+
+.uploader #start {
+  float: left;
+  clear: both;
+  width: 100%;
+  margin: 0;
+}
+.uploader #start.hidden {
+  display: none;
+}
+.uploader #start i.fa {
+  font-size: 50px;
+  margin-bottom: 1rem;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+.uploader #response {
+  float: left;
+  clear: both;
+  width: 100%;
+}
+.uploader #response.hidden {
+  display: none;
+}
+.uploader #response #messages {
+  margin-bottom: .5rem;
+}
+.uploader #file-image {
+  display: inline;
+  margin: 0 auto .5rem auto;
+  width: auto;
+  height: auto;
+  max-width: 180px;
+}
+.uploader #file-image.hidden {
+  display: none;
+}
+.uploader #notimage {
+  display: block;
+  float: left;
+  clear: both;
+  width: 100%;
+}
+.uploader #notimage.hidden {
+  display: none;
+}
+.uploader progress,
+.uploader .progress {
+  display: inline;
+  clear: both;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 180px;
+  height: 8px;
+  border: 0;
+  border-radius: 4px;
+  background-color: #eee;
+  overflow: hidden;
+}
+
+.uploader .progress[value]::-webkit-progress-bar {
+  border-radius: 4px;
+  background-color: #eee;
+}
+.uploader .progress[value]::-webkit-progress-value {
+  background: -webkit-linear-gradient(left, #393f90 0%, #454cad 50%);
+  background: linear-gradient(to right, #393f90 0%, #454cad 50%);
+  border-radius: 4px;
+}
+.uploader .progress[value]::-moz-progress-bar {
+  background: linear-gradient(to right, #393f90 0%, #454cad 50%);
+  border-radius: 4px;
+}
+.uploader input[type="file"] {
+  display: none;
+}
+.uploader div {
+  margin: 0 0 20px 0;
+  color: grey;
+}
+.uploader .btn {
+  display: inline-block;
+  background-color: black;
+  font-family: sans-serif;
+  font-size: 14px; 
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+
+  color: #fff;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+#resultList img{
+  width: 100%;
+  height: auto;
+
+}
+#resultList > div{
+  width: 400px;
+
+  border:1px solid #ccc;
+  margin: 10px;
+}
+#original{
+    width: 400px;
+
+  border:1px solid #ccc;
+  margin: 10px auto;
+  text-align: center;
+}
+#original:hover{
+   border: 1px solid #777;
+}
+#original img{
+  width: 100%;
+  height: auto;
+
+}
+
+#resaultList >div :hover{
+  border: 1px solid #777;
+
+}
+#result{
+  margin: 100px 0 200px 0;
+  min-height: 600px;
+
+}
+#resultList{
+   display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 100%
+}
+.info{
+  padding: 15px;
+  text-align: center;
+}
+/*................................FORUM................................*/
+
+#forum a:hover{
+  text-decoration: underline;
+}
+#forum{
+      margin: 50px;
+    padding: 0 50px;
+}
+#banner{
+  height: 100px;
+  background-color:rgba(0, 0, 0, 0.78);
+  padding: 20px 80px;
+  font-family: Arial, Helvetica, sans-serif;
+
+
+}
+
+#banner h2{
+  color: #fff;
+  margin-bottom: 0px;
+}
+
+#banner p{
+  color: grey;
+}
+#postList{
+  margin: 100px 0 200px 0;
+  padding: 30px 0 0 0;
+  border-top: solid grey 1px;
+  width: inherit;
+
+}
+.post{
+  display:flex;
+  display: -webkit-flex;
+  width: 100%;
+  height: auto;
+  padding: 0 ;
+}
+.post p{
+  color: grey;
+}
+.post a{
+  
+  color: black;
+}
+.postIcon{
+  -webkit-flex:1;
+  flex: 1;
+  display: -webkit-flex;
+    display: flex;
+}
+.postIcon img{
+  margin: auto;
+  height: 60px;
+
+}
+.credit{
+    -webkit-flex:5;
+  flex: 5;
+}
+.views{
+    -webkit-flex:1;
+  flex: 1;
+}
+.replies{
+    -webkit-flex:1;
+  flex: 1;
+}
+#pageNumber li{
+  list-style: none;
+  display: inline;
+  float: left;
+
+}
+#pages{
+  text-align: center;
+}
+ .footer{
+
+  margin: 0 auto;
+  padding: 20px 100px 0 100px;
+  
+  background: grey;
+  color: (0, 0, 0, 0.78);
+ }
+.wrap{
+  display: -webkit-flex;
+  display: flex;
+}
+ .links{
+  text-decoration: none;
+  line-height: 1.5;
+ }
+ .links ul {
+  list-style-type: none;
+  padding: 0;
+  color: #fff;
+  font-size: 14px;
+
+ }
+ .links  a{
+
+  color: rgba(0, 0, 0, 0.78);
+ }
+footer a:hover{
+ text-decoration: underline;
+ color: #fff;
+  
+ }
+ .address{
+     margin:0 80px;
+     line-height: 1.5;
+ }
+ /* ................blog.....................*/
+ #blog{
+ 
+    width: 900px;
+    margin: 50px auto;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: black;
+    padding-bottom: 100px;
+ }
+
+ #blogBanner{
+  height: 400px;
+  width: 100%;
+  background-color: grey;
+
+  color: #fff;
+  text-align: center;
+  display: table;
+  background-image: url(../images/blog.jpg) ;
+  background-size: cover;
+ }
+#blogInfo{
+  display: table-cell;
+  vertical-align: middle;
+    color:#fff; 
+}
+
+
+
+#blogger {
+  position: absolute;
+  top: 390px;
+  margin-left: 300px; 
+  left: 50%;
+}
+#blogger img{
+  border:solid #fff 5px;
+  border-radius: 50%;
+  height: 100px;
+  width: auto;
+}
+#blogger div{
+text-align: center;
+}
+#blogger p {
+  margin:0;
+}
+#blogContent{
+    width: 900px;
+    font-family: sans-serif;
+    padding:50px;
+    margin:50px auto;
+   
+    line-height: 200%;
+   
+ }
+ #comments{
+  width: 900px;
+    font-family: sans-serif;
+    padding:50px;
+    margin:50px auto;
+ }
+.comment{ 
+  padding: 5px;
+ }
+ .comment div{
+  overflow: hidden;
+ }
+#comments h3{
+  border-bottom: 1px solid black;
+    margin-bottom: 0;
+  padding: 10px;
+
+}
+ .comment img{
+  height: 50px;
+  width: auto;
+  border-radius: 50%;
+  padding: 10px;
+  vertical-align: top;
+ }
+ #comments form{
+  margin: 30px 100px;
+ }
+ #writeComment{
+  width: 700px;
+  height: 100px;
+ }
+ #submitComment{
+  margin: 10px 5px;
+  background-color: transparent;
+  border-radius: 5px;
+  border:1px solid #aaaaaa;
+  padding: 5px;
+  float: right;
+ }
+ /* ................signin.....................*/
+ #signPage{
+  width: 100%;
+  height: 100%;
+  display: table;
+  text-align: center;
+  background-color:#303030; 
+  
+ }
+ #signForm{
+  display: table-cell;
+  vertical-align: middle;
+  color: #fff;
+  font-family: arial;
+
+
+ }
+ #signForm div{
+  margin: 20px;
+ }
+
+ ::-webkit-input-placeholder {
+  color: #fff; 
+  font-weight: lighter;
+  padding: 5px;
+ }
+ #signForm a{
+  color: #fff;
+ }
+ .fillin{
+  border:#fff 1px solid;
+  border-radius: 5px;
+  height: 30px;
+   background-color: transparent;
+ }
+ #loginButton  {
+  
+  background-color: #fff;
+  color: black;
+  padding: 5px 10px;
+
+ }
+ #loginButton:hover{
+ color: #fff;
+ background-color: transparent;
+
+ }
+
+ #signForm a:hover{
+  text-decoration: underline;
+ }
+ .signFooter{
+  color: #fff;
+  text-align: center;
+  position: fixed;
+  font-size: 0.8em;
+  bottom: 4px;
+  width: 100%;
+ }
+  #signupButton  {
+  
+  background-color: #fff;
+  color: black;
+  padding: 5px 10px;
+
+ }
+ #signupButton:hover{
+ color: #fff;
+ background-color: transparent;
+
+ }
+ /*..............................................profile......................................................*/
+ #profileAside{
+  float: left;
+  width: 20%;
+  text-align: center;
+  padding: 30px;
+ 
+  height: 100%;
+ }
+ #profileAside img{
+      max-width: 200px;
+
+ }
+ #profileContent{
+  float: left;
+  width: 70%;
+  padding: 30px;
+
+  margin-bottom: 100px;
+  
+ }
+ #profileContent a{
+  text-decoration: none;
+ }
+ #profileContent a:hover{
+  text-decoration: underline;
+ }
+ #posted{
+  padding: 35px;
+   background-color:#F8F8F8 ;
+
+ }
+#posted div{
+
+  border-bottom: 1px black solid;
+
+
+ }
+ #replied{
+  margin-top: 20px;
+ padding: 35px;
+ background-color:#F8F8F8 ;
+
+ }
+ #replied div{
+  padding: 5px 5px 15px 5px;
+  border-bottom: 1px black solid;
+
+
+ }
+
+ #replied img{
+  height: 16px;
+  width: auto;
+ }
+
+
+ 
+

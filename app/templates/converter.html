@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+    {% block stylesheet %}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    {% endblock %}
+
+	{% block header %}
+	<nav style="background-color: black;">
+        <ul class="clearfix">
+            <li style="padding: 0 0 0 20px;"><button><a href="{{ url_for('auth.register') }}" style="color: #000000">Join us</a></button></li>
+            {% if current_user.is_authenticated %}
+			<li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+			{% else %}
+			<li><a href="{{ url_for('auth.login') }}">Login</a></li>
+			{% endif %}
+            <li>|</li>
+            <li><a href="{{ url_for('main.forum') }}">Forum</a></li>
+            <li>|</li>
+            <li><a href="{{ url_for('main.converter') }}" class="active">Converter</a></li>
+            <li>|</li>
+            <li><a href="{{ url_for('main.index') }}">Home</a></li>
+
+        </ul>
+    </nav>
+	{% endblock %}
+
+{% block content %}
+	<content>
+		<div id="converter">
+		<h2>File Upload & Image Preview</h2>
+		<form id="file-upload-form" class="uploader" action="/converter">
+		<input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+		<label for="file-upload" id="file-drag">
+		<img id="file-image" src="#" alt="Preview" class="hidden">   <!--file path-->
+		<div id="start">
+      		<i class="fa fa-download" aria-hidden="true"></i>
+      		<div>Select a file or drag here</div>
+      		<div id="notimage" class="hidden">Please select an image</div>
+      		<span id="file-upload-btn" class="btn">Select a file</span>
+    	</div>
+    	<div id="response" class="hidden">
+      		<div id="messages"></div>
+      		<progress class="progress" id="file-progress" value="0">
+        		<span>0</span>%
+      		</progress>
+    	</div>
+  		</label>
+  		</form>
+
+		</div>
+		{% if show_result %}
+		<div id="result" >
+			<div  class="clearfix" id="resultList">
+			<div id="duteranope"> 
+			<a href="{{ url_for('static', filename='user_upload'+'/deuteronopia_'+result_file_name) }}">
+			<img src="{{ url_for('static', filename='user_upload'+'/deuteronopia_'+result_file_name) }}">
+			</a>
+			<div class="info"> Duteranope</div>
+			</div>
+			<div id="protanope">
+				<a href="{{ url_for('static', filename='user_upload'+'/protonapia_'+result_file_name) }}">
+				<img src="{{ url_for('static', filename='user_upload'+'/protonapia_'+result_file_name) }}">
+				</a>
+				<div class="info"> Protanope</div>
+			</div>
+			<div id="tritanope">
+				<a href="{{ url_for('static', filename='user_upload'+'/tritanopia_'+result_file_name) }}">
+				<img src="{{ url_for('static', filename='user_upload'+'/tritanopia_'+result_file_name) }}">
+				</a>
+				<div class="info">Tritanope </div>
+			</div>
+			</div>
+			<div id="original">
+				<a href="{{ url_for('static', filename='user_upload'+'/'+result_file_name) }}">
+				<img src="{{ url_for('static', filename='user_upload'+'/'+result_file_name) }}">
+				</a>
+				<div class="info">Original</div>
+			</div>
+		</div>
+		{% endif %}
+	</content>
+	{% endblock %}
+	
+	{% block script %}
+	<script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+	{% endblock %}
